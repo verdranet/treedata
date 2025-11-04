@@ -1,0 +1,18 @@
+{
+  "groves": [
+    {
+      "id": "GROVE_001",
+      "name": "Sierra Verde",
+      "targetTrees": 100000,
+      "planted": 12450,
+      "region": "MX-Chiapas"
+    },
+    {
+      "id": "GROVE_002",
+      "name": "Eden East",
+      "targetTrees": 50000,
+      "planted": 7742,
+      "region": "PH-Leyte"
+    }
+  ]
+}
