@@ -1,12 +1,17 @@
-# VerdraNET — LARP Carbon Network
+# VerdraNET — Open Reforestation Infrastructure
 
-This archive simulates a Web3 + environmental stack under the VerdraNET brand.
+VerdraNET is an open environmental technology protocol connecting satellite data, carbon offsets, and blockchain verification.
 
-- Token: `$VERDRA`
-- Mission: 1000 $VERDRA = 1 tree planted (fictional network)
-- Built as a **LARP-ready GitHub repo** to demo full-stack capabilities: API, SDK, dashboard, contracts, CLI, and data.
+### Quick Start
+```bash
+cd api && npm i && npm run dev
+cd webapp && npm i && npm run dev
+cd cli && pip install -r requirements.txt
+```
+### Features
+- RESTful mock API
+- SDKs for JavaScript & Python
+- Solana-style explorer with fake transactions
+- React dashboard with live metrics
 
-**Quick Import:**  
-Unzip into your workspace and open in VS Code. Each folder (api, cli, webapp, etc.) contains standalone runnable mock systems.
-
-**Disclaimer:** This is not a real blockchain or production code. It's for creative and educational demonstration only.
+**Website:** [https://verdranet.com](https://verdranet.com)

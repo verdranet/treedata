@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync } from 'fs';
 import { nanoid } from 'nanoid';
 
 const app = express();
@@ -8,33 +8,22 @@ app.use(cors());
 app.use(express.json());
 
 const groves = JSON.parse(readFileSync('../data/groves.json'));
-const plots = JSON.parse(readFileSync('../data/plots.json'));
 const offsets = JSON.parse(readFileSync('../data/offsets.json'));
 
-app.get('/health', (req,res)=>res.json({ok:true, service:'verranet-mock-api'}));
+app.get('/health', (req,res)=>res.json({ok:true, network:'VerdraNET'}));
 app.get('/groves', (req,res)=>res.json(groves));
-app.get('/plots', (req,res)=>res.json(plots));
 app.get('/offsets', (req,res)=>res.json(offsets));
 
-// Fake mint endpoint
-app.post('/mint/tree', (req,res)=>{
-  const { plotId, species, planterId } = req.body || {};
-  const id = `TREE_${nanoid(6)}`;
-  const receipt = {
-    id: `RCPT_${nanoid(8)}`,
-    uri: `verranet://receipt/${id}`,
-    time: new Date().toISOString(),
-    plotId, species, planterId
-  };
-  // pretend append
-  const path = './receipts.json';
-  let receipts = [];
-  try { receipts = JSON.parse(readFileSync(path)); } catch(e){ receipts = []; }
-  receipts.push(receipt);
-  writeFileSync(path, JSON.stringify(receipts, null, 2));
-  res.json({ treeId: id, receipt });
+// Simulated explorer
+app.get('/explorer', (req,res)=>{
+  const sample = Array.from({length:5}).map((_,i)=>({
+    tx: '9xQeWvG8' + nanoid(10),
+    treeId: 'TREE_' + nanoid(5),
+    gps: [16.75 + Math.random()/100, -93.11 + Math.random()/100],
+    block: 1865000+i,
+    time: new Date(Date.now()-i*60000).toISOString()
+  }))
+  res.json({transactions: sample})
 });
 
-app.listen(8787, ()=>{
-  console.log('VerraNET mock API on http://localhost:8787');
-});
+app.listen(8787, ()=>console.log('VerdraNET API running on http://localhost:8787'));

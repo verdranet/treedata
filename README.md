@@ -1,50 +1,43 @@
-# VerdraNET (LARP)
-> **Disclaimer:** This is a fictional, non-production codebase created for demo/portfolio use. It simulates a carbon reforestation network with mock data, fake endpoints, and illustrative smart-contract stubs.
+<div align="center">
+  <img src="logo.png" alt="VerdraNET Logo" width="160"/>
+  <h1>VerdraNET</h1>
+  <p><strong>Where digital networks and living ecosystems merge.</strong></p>
+  <a href="https://verdranet.com">https://verdranet.com</a>
+</div>
 
-VerdraNET is a pretend, end‑to‑end stack for tree‑planting + carbon credit tracking. It includes:
+---
 
-- **Mock API** (`/api`) returning fake but plausible telemetry (plots, species, offsets).
-- **SDKs** (`/sdk/js`, `/sdk/python`) to consume the mock API + craft mint flows.
-- **Contract stubs** (`/contracts/solana`) for an on-chain "TreeNFT" & "GroveVault".
-- **CLI** (`/cli`) for local ops (generate plots, mint demo NFTs, calc offsets).
-- **Web app** (`/webapp`) a tiny demo dashboard (Vite + React).
-- **Data** (`/data`) seeded JSON for groves, plots, satellite snapshots, and offsets.
-- **Docs** (`/docs`) diagrams, pseudo-protocols, and the "VerraChain" larp spec.
+VerdraNET is an open-source carbon and reforestation data network.  
+It bridges on-chain transparency with real-world environmental action.
 
-## Quickstart
+### 🌱 Overview
+- **Proof-of-Plant Protocol:** Immutable, GPS-tagged reforestation records.
+- **TreeNFT Registry:** Each planted tree is represented by a verifiable digital token.
+- **Carbon Oracle:** Calculates dynamic CO₂ sequestration using NDVI and growth models.
+- **VerdraVault Treasury:** Manages offset pools and automated revenue routing.
 
-```bash
-# 1) Start the mock API
-cd api && npm i && npm run dev
+### ⚙️ Stack
+| Layer | Tech |
+|-------|------|
+| API | Node.js / Express |
+| SDKs | TypeScript + Python |
+| Dashboard | React (Vite) |
+| Smart Contracts | Solana Rust (program stubs) |
+| Data | JSON (mock telemetry) |
 
-# 2) Open the demo dashboard
-cd ../webapp && npm i && npm run dev
-
-# 3) Try the CLI
-cd ../cli && pip install -r requirements.txt
-python verra.py grove create --name "Test Grove" --target 10000
-python verra.py tree mint --species "Tectona grandis" --plot-id PLOT_001
+### 🧩 Key Components
+```
+/api           → REST API for telemetry + mint flows
+/webapp        → Dashboard with analytics + explorer tab
+/sdk/js        → JS SDK for developers
+/sdk/python    → Python SDK for automation
+/contracts     → Solana stubs (TreeNFT, VerdraVault)
+/cli           → Python CLI tools
+/docs          → Protocol + API specifications
 ```
 
-## Fake Concepts
+### 🔗 Live Link
+Visit **[verdranet.com](https://verdranet.com)** for more context, documentation, and the roadmap.
 
-- **TreeNFT**: 1 NFT ↔ 1 tree slot, with GPS + species + growth timeline hash.  
-- **GroveVault**: Multisig vault that "routes" carbon revenue to treasury (sim).  
-- **OffsetOracle**: Derives offsets from growth curves + satellite NDVI (mock).  
-- **VerraChain**: A pretend settlement chain that writes signed receipts from Oracles into Solana notes (no real chain here—see docs/spec).
-
-## Repo Structure
-
-```
-/api           Mock Express API with OpenAPI spec
-/cli           Python CLI (click) for local ops
-/contracts     Solana program stubs (Rust; non-compiling demo ok)
-/data          Seed JSON for demo objects
-/docs          Protocol notes & diagrams
-/sdk/js        TypeScript SDK (fetch-based)
-/sdk/python    Python SDK client
-/webapp        Vite + React demo dashboard
-```
-
-## License
-MIT © 2025 VerdraNET (LARP)
+### License
+MIT © 2025 VerdraNET

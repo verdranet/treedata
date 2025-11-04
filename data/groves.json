@@ -14,5 +14,17 @@
       "planted": 7742,
       "region": "PH-Leyte"
     }
+  ],
+  "offsets": [
+    {
+      "plotId": "PLOT_001",
+      "epoch": "2025-09",
+      "kgCO2e": 1823.4
+    },
+    {
+      "plotId": "PLOT_002",
+      "epoch": "2025-10",
+      "kgCO2e": 2650.0
+    }
   ]
 }

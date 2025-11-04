@@ -1,4 +1,20 @@
 {
+  "groves": [
+    {
+      "id": "GROVE_001",
+      "name": "Sierra Verde",
+      "targetTrees": 100000,
+      "planted": 12450,
+      "region": "MX-Chiapas"
+    },
+    {
+      "id": "GROVE_002",
+      "name": "Eden East",
+      "targetTrees": 50000,
+      "planted": 7742,
+      "region": "PH-Leyte"
+    }
+  ],
   "offsets": [
     {
       "plotId": "PLOT_001",
@@ -6,19 +22,9 @@
       "kgCO2e": 1823.4
     },
     {
-      "plotId": "PLOT_001",
-      "epoch": "2025-10",
-      "kgCO2e": 2011.2
-    },
-    {
       "plotId": "PLOT_002",
       "epoch": "2025-10",
       "kgCO2e": 2650.0
-    },
-    {
-      "plotId": "PLOT_101",
-      "epoch": "2025-10",
-      "kgCO2e": 740.6
     }
   ]
 }
